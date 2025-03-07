@@ -11,22 +11,26 @@ public class AIRunState : AIState
 
     public void Enter(AIAgent agent)
     {
-        //todo
+
     }
 
     public void AIFixedUpdate(AIAgent agent)
     {
-        //todo
-        agent.rig.MovePosition(agent.rig.position + Vector2.left * agent.moveSpeed * Time.deltaTime);
+
+        agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y);
+       
     }
 
     public void AIUpdate(AIAgent agent)
     {
-        //todo
+        if(agent.rig.velocity.y > 0f && agent.isClimb == false)
+        {
+            agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y * 0.45f);
+        }
     }
 
     public void Exit(AIAgent agent)
     {
-        //todo
+
     }
 }

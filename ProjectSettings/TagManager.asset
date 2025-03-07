@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hero
-  - Enemy_01
-  - Enemy_02
-  - Enemy_03
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -15,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemy01
+  - Enemy02
+  - Enemy03
+  - Ground
   - 
   - 
   - 
