@@ -7,6 +7,15 @@ using UnityEngine;
 public class AIAgent : MonoBehaviour
 {
     private AIStateMachine stateMachine;
+    public AIStateMachine StateMachine
+    {
+        get { return stateMachine; }
+    }
+
+    public AIStateID GetCurrentState()
+    {
+        return currentState;
+    }
 
     [Header("StartState")]
     [SerializeField] private AIStateID initalState;
@@ -16,7 +25,8 @@ public class AIAgent : MonoBehaviour
     public Rigidbody2D rig;
 
     [Header("Check")]
-    [SerializeField] private Transform raypoint;
+    [SerializeField] private Transform rayPoint;
+    [SerializeField] private Transform groundPoint;
 
 
     [Header("SpeedValue")]
@@ -24,6 +34,8 @@ public class AIAgent : MonoBehaviour
     public float verticalSpeed = 150.0f;
 
     public bool isStepping = true;
+    public bool isGround = true;
+
     public bool CanClimb = false;
     public bool isClimb = false;
 
@@ -43,7 +55,7 @@ public class AIAgent : MonoBehaviour
 
     private void Start()
     {
-        moveSpeed = UnityEngine.Random.Range(70, 150);
+        moveSpeed = UnityEngine.Random.Range(100, 200);
     }
 
     private void FixedUpdate()
@@ -64,10 +76,14 @@ public class AIAgent : MonoBehaviour
 
         if (collision.collider.CompareTag("Enemy") && currentState != AIStateID.Climb)
         {
+            AIAgent target;
+            target = collision.gameObject.GetComponent<AIAgent>();
+
             CanClimb =
-                collision.contacts[0].normal.x <= 1 &&
+                collision.contacts[0].normal.x <= 1.0f &&
                 collision.contacts[0].normal.x >= 0.5f &&
-                collision.gameObject.GetComponent<AIAgent>().isStepping == true;
+                target.isGround == true &&
+                target.isStepping == true;
 
             if (CanClimb)
             {
@@ -96,6 +112,7 @@ public class AIAgent : MonoBehaviour
         {
             ChangeCurrentState(AIStateID.Run);
             stateMachine.ChangeState(AIStateID.Run);
+
             return;
         }
     }
@@ -104,13 +121,20 @@ public class AIAgent : MonoBehaviour
     {
         stateMachine.Update();
 
-        RaycastHit2D raycastHit2D = Physics2D.Raycast((Vector2)raypoint.position, Vector2.up, 0.1f);
-        if(raycastHit2D)
+        RaycastHit2D raycastHit2D_Stepping = Physics2D.Raycast((Vector2)rayPoint.position, Vector2.up, 1f);
+        if(raycastHit2D_Stepping)
         {
-            if (raycastHit2D.collider.CompareTag("Enemy")) isStepping = false;
-            return;
-        }
+            if (raycastHit2D_Stepping.collider.CompareTag("Enemy")) isStepping = false;
+        }else
         isStepping = true;
+
+        RaycastHit2D raycastHit2D_Ground = Physics2D.Raycast((Vector2)groundPoint.position, Vector2.down, 0.1f);
+        if (raycastHit2D_Ground)
+        {
+            isGround = true;
+        }
+        else
+            isGround = false;
     }
 
     public void ChangeCurrentState(AIStateID aIStateID)

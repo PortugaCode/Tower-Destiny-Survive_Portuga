@@ -16,17 +16,20 @@ public class AIRunState : AIState
 
     public void AIFixedUpdate(AIAgent agent)
     {
+        if (agent.rig.velocity.y > 0f && agent.isClimb == false)
+        {
+            agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y * 0.45f);
+            return;
+        }
 
-        agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y);
-       
+       agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y);
+
+
     }
 
     public void AIUpdate(AIAgent agent)
     {
-        if(agent.rig.velocity.y > 0f && agent.isClimb == false)
-        {
-            agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y * 0.45f);
-        }
+        
     }
 
     public void Exit(AIAgent agent)

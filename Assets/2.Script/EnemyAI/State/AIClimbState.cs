@@ -14,7 +14,6 @@ public class AIClimbState : AIState
     }
     public void AIFixedUpdate(AIAgent agent)
     {
-        
         agent.rig.velocity = new Vector2(agent.rig.velocity.x, 1.0f * agent.verticalSpeed * Time.fixedDeltaTime);
     }
 
