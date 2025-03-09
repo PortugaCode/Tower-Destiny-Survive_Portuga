@@ -24,7 +24,10 @@ public class AIAgent : MonoBehaviour
     [Header("Rigidbody2D")]
     public Rigidbody2D rig;
 
-    [Header("Check")]
+    [Header("My Layer")]
+    [SerializeField] private LayerMask layerMask;
+
+    [Header("RayPoint")]
     [SerializeField] private Transform rayPoint;
     [SerializeField] private Transform groundPoint;
 
@@ -33,9 +36,9 @@ public class AIAgent : MonoBehaviour
     public float moveSpeed = 100.0f;
     public float verticalSpeed = 110.0f;
 
+    [Header("CheckState")]
     public bool isStepping = true;
     public bool isGround = true;
-
     public bool CanClimb = false;
     public bool isClimb = false;
 
@@ -118,14 +121,15 @@ public class AIAgent : MonoBehaviour
     {
         stateMachine.Update();
 
-        RaycastHit2D raycastHit2D_Stepping = Physics2D.Raycast((Vector2)rayPoint.position, Vector2.up, 1f);
+        RaycastHit2D raycastHit2D_Stepping = Physics2D.Raycast((Vector2)rayPoint.position, Vector2.up, 1f, layerMask);
         if(raycastHit2D_Stepping)
         {
             if (raycastHit2D_Stepping.collider.CompareTag("Enemy")) isStepping = false;
-        }else
-        isStepping = true;
+        }
+        else
+            isStepping = true;
 
-        RaycastHit2D raycastHit2D_Ground = Physics2D.Raycast((Vector2)groundPoint.position, Vector2.down, 0.01f);
+        RaycastHit2D raycastHit2D_Ground = Physics2D.Raycast((Vector2)groundPoint.position, Vector2.down, 0.01f, layerMask);
         if (raycastHit2D_Ground)
         {
             isGround = true;
