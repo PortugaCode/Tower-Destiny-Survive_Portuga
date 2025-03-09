@@ -221,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 306882267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.148, y: 1.242, z: 0}
+  m_LocalPosition: {x: 0.0010001659, y: 1.242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1174570720321624928, guid: e48e7c461a85c463cba5a999afb91a67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.38
+      value: 15.68
       objectReference: {fileID: 0}
     - target: {fileID: 1174570720321624928, guid: e48e7c461a85c463cba5a999afb91a67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -449,8 +449,8 @@ MonoBehaviour:
   rig: {fileID: 325147439}
   rayPoint: {fileID: 2079106908}
   groundPoint: {fileID: 1657608228}
-  moveSpeed: 100
-  verticalSpeed: 180
+  moveSpeed: 125
+  verticalSpeed: 110
   isStepping: 1
   isGround: 1
   CanClimb: 0
@@ -469,7 +469,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 5f75d012c1306e94b9971635d412063e, type: 2}
   m_IncludeLayers:
@@ -478,7 +478,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -704,8 +704,8 @@ MonoBehaviour:
   rig: {fileID: 338463599}
   rayPoint: {fileID: 306882268}
   groundPoint: {fileID: 1287755144}
-  moveSpeed: 100
-  verticalSpeed: 180
+  moveSpeed: 175
+  verticalSpeed: 110
   isStepping: 1
   isGround: 1
   CanClimb: 0
@@ -724,7 +724,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 5f75d012c1306e94b9971635d412063e, type: 2}
   m_IncludeLayers:
@@ -733,7 +733,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -1612,7 +1612,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 5f75d012c1306e94b9971635d412063e, type: 2}
   m_IncludeLayers:
@@ -1621,7 +1621,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -1648,7 +1648,7 @@ MonoBehaviour:
   rayPoint: {fileID: 812291728}
   groundPoint: {fileID: 1889966810}
   moveSpeed: 100
-  verticalSpeed: 180
+  verticalSpeed: 110
   isStepping: 1
   isGround: 1
   CanClimb: 0
@@ -1713,7 +1713,7 @@ Transform:
   m_GameObject: {fileID: 812291727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.148, y: 1.242, z: 0}
+  m_LocalPosition: {x: 0.001, y: 1.242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1745,7 +1745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1174570720321624928, guid: e48e7c461a85c463cba5a999afb91a67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.39
+      value: 17.03
       objectReference: {fileID: 0}
     - target: {fileID: 1174570720321624928, guid: e48e7c461a85c463cba5a999afb91a67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1942,7 +1942,7 @@ MonoBehaviour:
   rayPoint: {fileID: 1003280076}
   groundPoint: {fileID: 2074401006}
   moveSpeed: 100
-  verticalSpeed: 180
+  verticalSpeed: 110
   isStepping: 1
   isGround: 1
   CanClimb: 0
@@ -1961,7 +1961,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 5f75d012c1306e94b9971635d412063e, type: 2}
   m_IncludeLayers:
@@ -1970,7 +1970,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2036,7 +2036,7 @@ Transform:
   m_GameObject: {fileID: 1003280075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.148, y: 1.242, z: 0}
+  m_LocalPosition: {x: 0.0010001659, y: 1.242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2613,7 +2613,7 @@ Transform:
   m_GameObject: {fileID: 2079106907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.148, y: 1.242, z: 0}
+  m_LocalPosition: {x: 0.0010001659, y: 1.242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

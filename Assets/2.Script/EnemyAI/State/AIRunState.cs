@@ -22,7 +22,7 @@ public class AIRunState : AIState
             return;
         }
 
-       agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y);
+        agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, agent.rig.velocity.y);
 
 
     }

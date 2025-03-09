@@ -10,11 +10,11 @@ public class AIClimbState : AIState
     }
     public void Enter(AIAgent agent)
     {
-        agent.rig.gravityScale = 0f;
+        //agent.rig.gravityScale = 0f;
     }
     public void AIFixedUpdate(AIAgent agent)
     {
-        agent.rig.velocity = new Vector2(agent.rig.velocity.x, 1.0f * agent.verticalSpeed * Time.fixedDeltaTime);
+        agent.rig.velocity = new Vector2(-1.0f * agent.moveSpeed * Time.fixedDeltaTime, 1.0f * agent.verticalSpeed * Time.fixedDeltaTime);
     }
 
     public void AIUpdate(AIAgent agent)
@@ -24,6 +24,6 @@ public class AIClimbState : AIState
 
     public void Exit(AIAgent agent)
     {
-        agent.rig.gravityScale = 1f;
+        //agent.rig.gravityScale = 1f;
     }
 }

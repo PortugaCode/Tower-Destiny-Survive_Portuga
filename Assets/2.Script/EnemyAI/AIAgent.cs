@@ -31,7 +31,7 @@ public class AIAgent : MonoBehaviour
 
     [Header("SpeedValue")]
     public float moveSpeed = 100.0f;
-    public float verticalSpeed = 150.0f;
+    public float verticalSpeed = 110.0f;
 
     public bool isStepping = true;
     public bool isGround = true;
@@ -53,10 +53,6 @@ public class AIAgent : MonoBehaviour
         currentState = initalState;
     }
 
-    private void Start()
-    {
-        moveSpeed = UnityEngine.Random.Range(100, 200);
-    }
 
     private void FixedUpdate()
     {
@@ -83,7 +79,8 @@ public class AIAgent : MonoBehaviour
                 collision.contacts[0].normal.x <= 1.0f &&
                 collision.contacts[0].normal.x >= 0.5f &&
                 target.isGround == true &&
-                target.isStepping == true;
+                target.isStepping == true &&
+                isStepping;
 
             if (CanClimb)
             {
@@ -128,7 +125,7 @@ public class AIAgent : MonoBehaviour
         }else
         isStepping = true;
 
-        RaycastHit2D raycastHit2D_Ground = Physics2D.Raycast((Vector2)groundPoint.position, Vector2.down, 0.1f);
+        RaycastHit2D raycastHit2D_Ground = Physics2D.Raycast((Vector2)groundPoint.position, Vector2.down, 0.01f);
         if (raycastHit2D_Ground)
         {
             isGround = true;
