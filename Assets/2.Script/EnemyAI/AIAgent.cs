@@ -42,6 +42,8 @@ public class AIAgent : MonoBehaviour
     public bool CanClimb = false;
     public bool isClimb = false;
 
+    private bool isEnd = false;
+
     private void Awake()
     {
         stateMachine = new AIStateMachine(this);
@@ -83,6 +85,7 @@ public class AIAgent : MonoBehaviour
                 collision.contacts[0].normal.x >= 0.5f &&
                 target.isGround == true &&
                 target.isStepping == true &&
+                target.isEnd == false &&
                 isStepping;
 
             if (CanClimb)
@@ -128,6 +131,14 @@ public class AIAgent : MonoBehaviour
         }
         else
             isStepping = true;
+
+        RaycastHit2D raycastHit2D_Hero = Physics2D.Raycast((Vector2)rayPoint.position, Vector2.left, 1f, layerMask);
+        if (raycastHit2D_Hero)
+        {
+            if (raycastHit2D_Hero.collider.CompareTag("Hero")) isEnd = true;
+        }
+        else
+            isEnd = false;
 
         RaycastHit2D raycastHit2D_Ground = Physics2D.Raycast((Vector2)groundPoint.position, Vector2.down, 0.01f, layerMask);
         if (raycastHit2D_Ground)

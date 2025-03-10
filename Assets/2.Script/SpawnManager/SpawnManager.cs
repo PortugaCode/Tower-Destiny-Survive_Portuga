@@ -16,21 +16,18 @@ public class SpawnManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (Instance != null)
         {
             Destroy(gameObject);
+            return;
         }
+        Instance = this;
     }
 
     //===========================================
 
-/*    private const int ENEMY_MAX = 20;
-    private const int BULLET_MAX = 30;*/
+    private const int ENEMY_MAX = 50;
+
 
 
 
@@ -51,6 +48,8 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private float spawnTime;
     [SerializeField] private float spawnDelay = 2.0f;
+
+    public int EnemyCount = 0;
 
 
 
@@ -91,7 +90,11 @@ public class SpawnManager : MonoBehaviour
                 break;
 
             case SpawnSate.Spawn:
-                PoolingEnemy();
+                if(EnemyCount < ENEMY_MAX)
+                {
+                    PoolingEnemy();
+                    EnemyCount++;
+                }
                 break;
 
             case SpawnSate.Stop:

@@ -866,7 +866,7 @@ MonoBehaviour:
   rig: {fileID: 3509926027786996200}
   layerMask:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 6400
   rayPoint: {fileID: 5947242292762200741}
   groundPoint: {fileID: 7142768871003867346}
   moveSpeed: 200

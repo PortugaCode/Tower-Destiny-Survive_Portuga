@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ParallaxControler parallaxControler;
     [SerializeField] private SpawnManager spawnManager;
 
+
     public Action<bool> OnFightAction;
     public Action<bool> OnGameEndAction;
 
