@@ -24,6 +24,9 @@ public class AIAgent : MonoBehaviour
     [Header("Rigidbody2D")]
     public Rigidbody2D rig;
 
+    [Header("Aniamator")]
+    public Animator animator;
+
     [Header("My Layer")]
     [SerializeField] private LayerMask layerMask;
 

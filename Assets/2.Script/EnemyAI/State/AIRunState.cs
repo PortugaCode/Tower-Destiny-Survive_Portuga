@@ -11,7 +11,7 @@ public class AIRunState : AIState
 
     public void Enter(AIAgent agent)
     {
-
+        agent.animator.SetBool("IsIdle", true);
     }
 
     public void AIFixedUpdate(AIAgent agent)
@@ -34,6 +34,6 @@ public class AIRunState : AIState
 
     public void Exit(AIAgent agent)
     {
-
+        agent.animator.SetBool("IsIdle", false);
     }
 }

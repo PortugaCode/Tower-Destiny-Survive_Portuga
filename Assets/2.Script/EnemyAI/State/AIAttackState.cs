@@ -13,6 +13,7 @@ public class AIAttackState : AIState
     public void Enter(AIAgent agent)
     {
         agent.rig.velocity = Vector2.zero;
+        agent.animator.SetBool("IsAttacking", true);
     }
 
     public void AIFixedUpdate(AIAgent agent)
@@ -27,7 +28,7 @@ public class AIAttackState : AIState
 
     public void Exit(AIAgent agent)
     {
-        
+        agent.animator.SetBool("IsAttacking", false);
     }
 
 

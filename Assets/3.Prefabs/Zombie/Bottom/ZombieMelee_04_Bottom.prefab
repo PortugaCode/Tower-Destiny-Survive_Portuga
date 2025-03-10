@@ -864,6 +864,7 @@ MonoBehaviour:
   initalState: 0
   currentState: 0
   rig: {fileID: 3509926027786996200}
+  animator: {fileID: 925707032600371843}
   layerMask:
     serializedVersion: 2
     m_Bits: 6400
