@@ -27,12 +27,18 @@ public class AIAgent : MonoBehaviour
     [Header("Aniamator")]
     public Animator animator;
 
-    [Header("My Layer")]
+    [Header("EnemyID")]
+    [SerializeField] private PoolUniqueID poolUniqueID;
     [SerializeField] private LayerMask layerMask;
 
     [Header("RayPoint")]
     [SerializeField] private Transform rayPoint;
     [SerializeField] private Transform groundPoint;
+
+    [Header("Health")]
+    public float health;
+    public float health_Full;
+
 
 
     [Header("SpeedValue")]
@@ -55,12 +61,19 @@ public class AIAgent : MonoBehaviour
         stateMachine.RegsisterState(new AIRunState());
         stateMachine.RegsisterState(new AIAttackState());
         stateMachine.RegsisterState(new AIClimbState());
+        stateMachine.RegsisterState(new AIDieState());
         #endregion
 
         stateMachine.ChangeState(initalState);
         currentState = initalState;
     }
 
+    private void OnEnable()
+    {
+        health = health_Full;
+        stateMachine.ChangeState(initalState);
+        currentState = initalState;
+    }
 
     private void FixedUpdate()
     {
@@ -125,7 +138,20 @@ public class AIAgent : MonoBehaviour
 
     private void Update()
     {
+        if (currentState == AIStateID.Death) return;
+
+        if(health <= 0.0f && currentState != AIStateID.Death)
+        {
+            ChangeCurrentState(AIStateID.Death);
+            stateMachine.ChangeState(AIStateID.Death);
+
+            return;
+        }
+
+
         stateMachine.Update();
+
+        #region [Raycast ºÎºÐ]
 
         RaycastHit2D raycastHit2D_Stepping = Physics2D.Raycast((Vector2)rayPoint.position, Vector2.up, 1f, layerMask);
         if(raycastHit2D_Stepping)
@@ -150,6 +176,8 @@ public class AIAgent : MonoBehaviour
         }
         else
             isGround = false;
+
+        #endregion
     }
 
     public void ChangeCurrentState(AIStateID aIStateID)
@@ -157,6 +185,10 @@ public class AIAgent : MonoBehaviour
         this.currentState = aIStateID;
     }
 
+    public void OnDieAction()
+    {
+        SpawnManager.Instance.EnqueueData(poolUniqueID, this.gameObject);
+    }
 
 
 }
