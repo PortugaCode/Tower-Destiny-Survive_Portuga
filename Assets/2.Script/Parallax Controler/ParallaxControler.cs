@@ -23,7 +23,7 @@ public class ParallaxControler : MonoBehaviour
         GameManager.Instance.OnFightAction -= SetParallaxSpeed;
         GameManager.Instance.OnFightAction += SetParallaxSpeed;
 
-        SetParallaxSpeed(false);
+        //SetParallaxSpeed(false);
     }
 
     public void SetParallaxSpeed(bool isFight)
