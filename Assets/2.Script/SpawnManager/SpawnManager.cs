@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+
+public enum SpawnSate
+{
+    None = 0,
+    Spawn,
+    Stop
+}
 public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Instance;
@@ -25,12 +32,7 @@ public class SpawnManager : MonoBehaviour
 /*    private const int ENEMY_MAX = 20;
     private const int BULLET_MAX = 30;*/
 
-    private enum SpawnSate
-    {
-        None = 0,
-        Spawn,
-        Stop
-    }
+
 
     [Header("PoolData")]
     [SerializeField] private ObjectPoolData objectPoolData;
@@ -40,6 +42,12 @@ public class SpawnManager : MonoBehaviour
 
     [Header("SpawnState")]
     [SerializeField] private SpawnSate spawnSate;
+
+    public void SetSpawnState(SpawnSate spawnSate)
+    {
+        this.spawnSate = spawnSate;
+    }
+
 
     [SerializeField] private float spawnTime;
     [SerializeField] private float spawnDelay = 2.0f;
@@ -104,12 +112,14 @@ public class SpawnManager : MonoBehaviour
     public void PoolingEnemy()
     {
         int rand = UnityEngine.Random.Range(0, 3);
+        int randomEnemy = UnityEngine.Random.Range(0, 4);
         GameObject enemyClone;
 
         // 큐에 ENEMY MAX 만큼 채워있지 않을 때
         if (poolDic[(PoolUniqueID)rand].Count <= 0)
         {
-            enemyClone = Instantiate(objectPoolData.GetPrefab((PoolUniqueID)rand), spawnPoint[rand].position, Quaternion.identity);
+            enemyClone = Instantiate(objectPoolData.GetPrefab((PoolUniqueID)rand, randomEnemy)
+                , spawnPoint[rand].position, Quaternion.identity);
             enemyClone.transform.SetParent(spawnPoint[rand]);
             
             return;
@@ -119,7 +129,5 @@ public class SpawnManager : MonoBehaviour
         enemyClone.transform.position = spawnPoint[rand].position;
         enemyClone.SetActive(true);
     }
-
-
 
 }
