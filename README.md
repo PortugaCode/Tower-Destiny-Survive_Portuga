@@ -8,7 +8,7 @@
 2. 타워 꼭대기 사냥꾼의 샷건 공격 구현
 3. 데미지 표기 및 피격 효과 구현
 <details>
-    <summary>자세히</summary>
+    <summary>일정</summary>
 
 #### 1 일차
 1. 적 AI를 구현하기 위한 FSM 구조 구현
