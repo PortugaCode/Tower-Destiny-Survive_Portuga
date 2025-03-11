@@ -42,6 +42,8 @@ email : poolutoocaa123@gmail.com
 - ObjectPoolData SO에 오브젝트 풀링할 Prefab을 추가하고 SpawnManager(ObjectPooling 담당)에서 사용
 - [ObjectPoolData](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/SpawnManager/ObjectPoolData.cs)
 - [SpawnManager](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/SpawnManager/SpawnManager.cs)
+
+![image](./TDS_IMG/Object_Pooling.png)
  
 <br></br>
 #### MonsterTower
