@@ -43,7 +43,7 @@ email : poolutoocaa123@gmail.com
 - [ObjectPoolData](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/SpawnManager/ObjectPoolData.cs)
 - [SpawnManager](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/SpawnManager/SpawnManager.cs)
 
-![image](./TDS_IMG/Object_Pooling.png)
+![image](./TDS_IMG/Object_Pooling.PNG)
  
 <br></br>
 #### MonsterTower
