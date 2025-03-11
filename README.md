@@ -23,3 +23,12 @@
 
 </details>
 
+#### 기술 문서
+<details>
+    <summary> 자세히 </summary>
+
+#### FSM
+- 몬스터의 AI를 구현하기 위해 FSM을 활용하였습니다.
+-- Run, Climb, Attack, Death 상태를 분리 구현
+
+</details>
