@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 925707032600371843}
   - component: {fileID: 3509926027786996200}
   - component: {fileID: 8078154728682657687}
+  - component: {fileID: 4069026790629961299}
   - component: {fileID: 2159467279010793811}
   m_Layer: 8
   m_Name: ZombieMelee_04_Bottom
@@ -796,6 +797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 8230294312308407557}
   - {fileID: 2450450769966429436}
   - {fileID: 5947242292762200741}
   - {fileID: 7142768871003867346}
@@ -865,17 +867,36 @@ MonoBehaviour:
   currentState: 0
   rig: {fileID: 3509926027786996200}
   animator: {fileID: 925707032600371843}
+  poolUniqueID: 2
   layerMask:
     serializedVersion: 2
     m_Bits: 6400
   rayPoint: {fileID: 5947242292762200741}
   groundPoint: {fileID: 7142768871003867346}
+  health: 100
+  health_Full: 100
   moveSpeed: 200
   verticalSpeed: 110
   isStepping: 1
   isGround: 1
   CanClimb: 0
   isClimb: 0
+  flashEffect: {fileID: 4069026790629961299}
+  deathEffect: {fileID: 8230294312308407611}
+--- !u!114 &4069026790629961299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9181290902611275595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634dd1d1b964614184b217bb7f213f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashMat: {fileID: 2100000, guid: 2e9076ae4244f0e4481729e2fcb7c8c2, type: 2}
+  duration: 0.1
 --- !u!70 &2159467279010793811
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -911,3 +932,70 @@ CapsuleCollider2D:
   m_Offset: {x: -0.20172358, y: 0.48620605}
   m_Size: {x: 0.6965513, y: 1.1448274}
   m_Direction: 0
+--- !u!1001 &8341117216315436135
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2969198724349517769}
+    m_Modifications:
+    - target: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_Name
+      value: CFXR3 Hit Misc F Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.133
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.465
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+--- !u!4 &8230294312308407557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  m_PrefabInstance: {fileID: 8341117216315436135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8230294312308407611 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 141433446842962268, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  m_PrefabInstance: {fileID: 8341117216315436135}
+  m_PrefabAsset: {fileID: 0}

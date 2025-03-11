@@ -11,7 +11,11 @@ public class AIDieState : AIState
 
     public void Enter(AIAgent agent)
     {
+        agent.rig.velocity = Vector3.zero;
         agent.animator.SetBool("IsDead", true);
+
+        
+        //SpawnManager.Instance.EnqueueData(agent.PoolUniqueID, agent.gameObject);
     }
 
     public void AIFixedUpdate(AIAgent agent)
@@ -21,7 +25,7 @@ public class AIDieState : AIState
 
     public void AIUpdate(AIAgent agent)
     {
-        
+
     }
 
 

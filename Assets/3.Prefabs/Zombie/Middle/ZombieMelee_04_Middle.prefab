@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 3324739492609684307}
   - component: {fileID: 2864489494480631019}
   - component: {fileID: 977210527947909573}
+  - component: {fileID: -2950961249501534626}
   - component: {fileID: 1678024019180329882}
   m_Layer: 7
   m_Name: ZombieMelee_04_Middle
@@ -302,6 +303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 9215176130792687178}
   - {fileID: 3942511687449468410}
   - {fileID: 3500432700196352786}
   - {fileID: 5835557200670833845}
@@ -371,17 +373,36 @@ MonoBehaviour:
   currentState: 0
   rig: {fileID: 2864489494480631019}
   animator: {fileID: 3324739492609684307}
+  poolUniqueID: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 5248
   rayPoint: {fileID: 3500432700196352786}
   groundPoint: {fileID: 5835557200670833845}
+  health: 100
+  health_Full: 100
   moveSpeed: 200
   verticalSpeed: 110
   isStepping: 1
   isGround: 1
   CanClimb: 0
   isClimb: 0
+  flashEffect: {fileID: -2950961249501534626}
+  deathEffect: {fileID: 9215176130792687220}
+--- !u!114 &-2950961249501534626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656863952780392061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634dd1d1b964614184b217bb7f213f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashMat: {fileID: 2100000, guid: 2e9076ae4244f0e4481729e2fcb7c8c2, type: 2}
+  duration: 0.1
 --- !u!70 &1678024019180329882
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -911,3 +932,70 @@ Transform:
   - {fileID: 578887317443707487}
   m_Father: {fileID: 3942511687449468410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &9085054735138002728
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6300367376156002192}
+    m_Modifications:
+    - target: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_Name
+      value: CFXR3 Hit Misc F Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.133
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.465
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+--- !u!4 &9215176130792687178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  m_PrefabInstance: {fileID: 9085054735138002728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &9215176130792687220 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 141433446842962268, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  m_PrefabInstance: {fileID: 9085054735138002728}
+  m_PrefabAsset: {fileID: 0}

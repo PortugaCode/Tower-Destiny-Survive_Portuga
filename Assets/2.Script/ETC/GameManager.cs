@@ -28,13 +28,18 @@ public class GameManager : MonoBehaviour
     public void FightAction(bool isFight)
     {
         OnFightAction?.Invoke(isFight);
-        spawnManager.SetSpawnState(SpawnSate.Spawn);
+        //spawnManager.SetSpawnState(SpawnSate.Spawn);
     }
 
     public void GameEndAction(bool isGameEnd)
     {
         OnGameEndAction?.Invoke(isGameEnd);
         spawnManager.SetSpawnState(SpawnSate.Stop);
+    }
+
+    public void StartSpawn()
+    {
+        spawnManager.SetSpawnState(SpawnSate.Spawn);
     }
 
 

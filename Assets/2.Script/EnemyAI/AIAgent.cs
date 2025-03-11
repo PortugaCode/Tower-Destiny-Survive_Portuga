@@ -29,6 +29,7 @@ public class AIAgent : MonoBehaviour
 
     [Header("EnemyID")]
     [SerializeField] private PoolUniqueID poolUniqueID;
+    public PoolUniqueID PoolUniqueID => poolUniqueID;
     [SerializeField] private LayerMask layerMask;
 
     [Header("RayPoint")]
@@ -36,9 +37,8 @@ public class AIAgent : MonoBehaviour
     [SerializeField] private Transform groundPoint;
 
     [Header("Health")]
-    public float health;
-    public float health_Full;
-
+    public float health = 100.0f;
+    public float health_Full = 100.0f;
 
 
     [Header("SpeedValue")]
@@ -50,8 +50,13 @@ public class AIAgent : MonoBehaviour
     public bool isGround = true;
     public bool CanClimb = false;
     public bool isClimb = false;
-
     private bool isEnd = false;
+
+
+    [Header("Effect")]
+    [SerializeField] private FlashEffect flashEffect;
+    [SerializeField] private ParticleSystem deathEffect;
+    public ParticleSystem DeathEffect => deathEffect;
 
     private void Awake()
     {
@@ -83,6 +88,8 @@ public class AIAgent : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (health <= 0) return;
+
         if (collision.collider.CompareTag("Player") && currentState != AIStateID.Attack)
         {
             ChangeCurrentState(AIStateID.Attack);
@@ -119,6 +126,10 @@ public class AIAgent : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        if (health <= 0) return;
+
+
+
         if (collision.collider.CompareTag("Player"))
         {
             ChangeCurrentState(AIStateID.Run);
@@ -137,19 +148,10 @@ public class AIAgent : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (currentState == AIStateID.Death) return;
-
-        if(health <= 0.0f && currentState != AIStateID.Death)
-        {
-            ChangeCurrentState(AIStateID.Death);
-            stateMachine.ChangeState(AIStateID.Death);
-
-            return;
-        }
-
-
+    { 
         stateMachine.Update();
+
+        if (currentState == AIStateID.Death) return;
 
         #region [Raycast ºÎºÐ]
 
@@ -188,6 +190,20 @@ public class AIAgent : MonoBehaviour
     public void OnDieAction()
     {
         SpawnManager.Instance.EnqueueData(poolUniqueID, this.gameObject);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        flashEffect.Flash();
+
+        if (health <= 0)
+        {
+            deathEffect.Play();
+            ChangeCurrentState(AIStateID.Death);
+            stateMachine.ChangeState(AIStateID.Death);
+            return;
+        }
     }
 
 

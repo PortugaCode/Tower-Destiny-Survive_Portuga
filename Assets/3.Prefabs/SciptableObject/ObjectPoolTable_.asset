@@ -20,7 +20,6 @@ MonoBehaviour:
     - {fileID: 6729072093677171316, guid: 8622b39048070e049921aff7cc733978, type: 3}
     - {fileID: 1175763547415536310, guid: 867e97a8fbed9fa4faddb2ad9e276f25, type: 3}
     - {fileID: 1321912813191103778, guid: 1fff5d82c3504fe4285238b18061c252, type: 3}
-    poolsize: 30
   - discription: Enemy_Middle
     enumKey: 1
     prefab:
@@ -28,7 +27,6 @@ MonoBehaviour:
     - {fileID: 2835544341206593604, guid: dbbe180760824eb4bac4785a45a5c478, type: 3}
     - {fileID: 3566371317877611808, guid: 4501c526047d8ad4c9bf2844a72efd45, type: 3}
     - {fileID: 2656863952780392061, guid: 1ca7c57a4f68bfc43b8e5e1afa5fe937, type: 3}
-    poolsize: 30
   - discription: Enemy_Bottom
     enumKey: 2
     prefab:
@@ -36,4 +34,7 @@ MonoBehaviour:
     - {fileID: 7784772411993781704, guid: 10346b3b86029db46bce507c8ca4b35c, type: 3}
     - {fileID: 862763223723967177, guid: 17c1ade0ff891da4988cb1a7752f2e10, type: 3}
     - {fileID: 9181290902611275595, guid: 0c56a4d1e0582be4da60db1385a0fd2e, type: 3}
-    poolsize: 30
+  - discription: Basic Bullet
+    enumKey: 3
+    prefab:
+    - {fileID: 4977312158393724796, guid: 4ba63800376273d498b05c99915d919e, type: 3}
