@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     private void OnEnable()
     {
         autoDelete = 5.0f;
-        damage = UnityEngine.Random.Range(10.0f, 51.0f);
+        damage = UnityEngine.Random.Range(5.0f, 21.0f);
     }
 
     private void FixedUpdate()
