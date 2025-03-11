@@ -117,7 +117,6 @@ public class AIAgent : MonoBehaviour
             if (CanClimb)
             {
                 isClimb = true;
-                Debug.Log("climb으로 변경");
                 ChangeCurrentState(AIStateID.Climb);
                 stateMachine.ChangeState(AIStateID.Climb);
                 return;

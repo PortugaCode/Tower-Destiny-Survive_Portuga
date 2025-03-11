@@ -16,7 +16,6 @@ public class Truck_ : MonoBehaviour
         {
             if (raycastHit2D.collider.CompareTag("Enemy"))
             {
-                Debug.Log("½Î¿ò ½ÃÀÛ!");
                 isFight = true;
                 GameManager.Instance.FightAction(isFight);
             }
@@ -25,7 +24,6 @@ public class Truck_ : MonoBehaviour
         }
         if(!raycastHit2D && isFight == true)
         {
-            Debug.Log("½Î¿ò ³¡!");
             isFight = false;
             GameManager.Instance.FightAction(isFight);
 
