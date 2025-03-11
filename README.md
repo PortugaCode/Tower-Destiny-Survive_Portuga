@@ -1,4 +1,4 @@
-email : poolutoocaa123@gamil.com
+email : poolutoocaa123@gmail.com
 
 ## [팀스파르타] 2D 모바일 게임 과제
 
