@@ -57,7 +57,6 @@ email : poolutoocaa123@gmail.com
 - 몬스터 피격 시 일정 데미지를 주도록 구현
 - 피격 이펙트, 데미지 텍스트, 체력 바 UI 구현
   
-![image](./TDS_IMG/Player_Gun.png)
 ![image](./TDS_IMG/Monster_hit.png)
 
 <br></br>
