@@ -1,3 +1,5 @@
+email : poolutoocaa123@gamil.com
+
 ## [팀스파르타] 2D 모바일 게임 과제
 
 ### TDS_Tower Destiny Survive
