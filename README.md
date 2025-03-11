@@ -1,4 +1,5 @@
 email : poolutoocaa123@gmail.com
+youtube : https://youtu.be/sEPTtHLChyk
 
 ## [팀스파르타] 2D 모바일 게임 과제
 
