@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 using UnityEngine.VFX;
-using static UnityEditor.PlayerSettings;
 
 
 public enum SpawnSate

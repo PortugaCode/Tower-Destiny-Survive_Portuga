@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     public Action<bool> OnFightAction;
     public Action<bool> OnGameEndAction;
 
+    private void Start()
+    {
+        Screen.SetResolution(864, 1920, FullScreenMode.Windowed);
+    }
+
     public void FightAction(bool isFight)
     {
         OnFightAction?.Invoke(isFight);
