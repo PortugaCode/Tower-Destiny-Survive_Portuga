@@ -36,8 +36,6 @@ email : poolutoocaa123@gmail.com
 - [AIAgent](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIAgent.cs)
 - [AIState](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIState.cs)
 
-![image](./TDS_IMG/Monster_State.png)
-
 <br></br>
 #### ObjectPooling
 - 몬스터, 총알, 데미지 표기 Text는 반복적으로 사용하기 때문에 오브젝트 풀링으로 성능을 높임
@@ -50,12 +48,17 @@ email : poolutoocaa123@gmail.com
 - 몬스터가 보다 자연스럽게 타워를 올라가게 하기 위해 계단 형태로 탑을 쌓도록 구현
 - 물리 충돌 및 RayCast를 활용하여 앞의 몬스터가 올라갈 수 있는 상태인지 체크
 
+![image](./TDS_IMG/Monster_State.png)
+
 <br></br>
 #### PlayerAttack
 - 총의 총구는 마우스 커서 위치를 향하도록 구현
 - 클릭 시 해당 총구 방향에서 세 갈래로 발사되도록 구현
 - 몬스터 피격 시 일정 데미지를 주도록 구현
 - 피격 이펙트, 데미지 텍스트, 체력 바 UI 구현
+  
+![image](./TDS_IMG/Player_Gun.png)
+![image](./TDS_IMG/Monster_hit.png)
 
 <br></br>
 ####  EndlessBackground
