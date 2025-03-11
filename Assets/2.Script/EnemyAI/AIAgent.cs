@@ -58,6 +58,9 @@ public class AIAgent : MonoBehaviour
     [SerializeField] private ParticleSystem deathEffect;
     public ParticleSystem DeathEffect => deathEffect;
 
+
+    public Action<float> OnDamage;
+
     private void Awake()
     {
         stateMachine = new AIStateMachine(this);
@@ -196,6 +199,8 @@ public class AIAgent : MonoBehaviour
     {
         health -= damage;
         flashEffect.Flash();
+
+        OnDamage?.Invoke(damage);
 
         if (health <= 0)
         {
