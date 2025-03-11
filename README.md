@@ -36,6 +36,8 @@ email : poolutoocaa123@gmail.com
 - [AIAgent](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIAgent.cs)
 - [AIState](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIState.cs)
 
+![alt text](TDS_IMG\Monster_State.png)
+
 <br></br>
 #### ObjectPooling
 - 몬스터, 총알, 데미지 표기 Text는 반복적으로 사용하기 때문에 오브젝트 풀링으로 성능을 높임
