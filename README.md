@@ -36,7 +36,7 @@ email : poolutoocaa123@gmail.com
 - [AIAgent](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIAgent.cs)
 - [AIState](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIState.cs)
 
-![image](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/tree/main/TDS_IMG/Monster_State.png)
+![image](./TDS_IMG/Monster_State.png)
 
 <br></br>
 #### ObjectPooling
