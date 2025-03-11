@@ -36,7 +36,7 @@ email : poolutoocaa123@gmail.com
 - [AIAgent](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIAgent.cs)
 - [AIState](https://github.com/PortugaCode/Tower-Destiny-Survive_Portuga/blob/main/Assets/2.Script/EnemyAI/AIState.cs)
 
-<br></br>
+<br>
 #### ObjectPooling
 - 몬스터, 총알, 데미지 표기 Text는 반복적으로 사용하기 때문에 오브젝트 풀링으로 성능을 높임
 - ObjectPoolData SO에 오브젝트 풀링할 Prefab을 추가하고 SpawnManager(ObjectPooling 담당)에서 사용
@@ -50,7 +50,7 @@ email : poolutoocaa123@gmail.com
 
 ![image](./TDS_IMG/Monster_State.png)
 
-<br></br>
+<br>
 #### PlayerAttack
 - 총의 총구는 마우스 커서 위치를 향하도록 구현
 - 클릭 시 해당 총구 방향에서 세 갈래로 발사되도록 구현
@@ -59,7 +59,7 @@ email : poolutoocaa123@gmail.com
   
 ![image](./TDS_IMG/Monster_hit.png)
 
-<br></br>
+<br>
 ####  EndlessBackground
 - Player가 앞으로 가는 듯한 효과를 위해 배경이 무한히 움직이며 반복되는 기능 구현
 
