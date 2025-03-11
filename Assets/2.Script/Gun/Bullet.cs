@@ -61,6 +61,8 @@ public class Bullet : MonoBehaviour
                     }
                     SpawnManager.Instance.EnqueueData(poolUniqueID, this.gameObject);
                 }
+
+                SpawnManager.Instance.PoolingDamage((int)damage, gameObject.transform);
             }
 
             return;

@@ -38,3 +38,7 @@ MonoBehaviour:
     enumKey: 3
     prefab:
     - {fileID: 4977312158393724796, guid: 4ba63800376273d498b05c99915d919e, type: 3}
+  - discription: Damage Popup
+    enumKey: 4
+    prefab:
+    - {fileID: 6217006660049265881, guid: 0093aebc14607dd4dba0fe54d807fd25, type: 3}

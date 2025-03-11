@@ -13,7 +13,9 @@ public enum PoolUniqueID
     Enemy_Middle,
     Enemy_Bottom,
     // Bullet ========================
-    BasicBullet
+    BasicBullet,
+    // Damage ========================
+    Damage,
 }
 
 [Serializable]

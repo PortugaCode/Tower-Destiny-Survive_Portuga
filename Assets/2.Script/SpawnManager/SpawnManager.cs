@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.VFX;
+using static UnityEditor.PlayerSettings;
 
 
 public enum SpawnSate
@@ -76,11 +78,19 @@ public class SpawnManager : MonoBehaviour
 
     private void initDic()
     {
-        poolDic =new Dictionary<PoolUniqueID, Queue<GameObject>>();
+        poolDic = new Dictionary<PoolUniqueID, Queue<GameObject>>();
         poolDic.Add(PoolUniqueID.Enemy_Top, new Queue<GameObject>());
         poolDic.Add(PoolUniqueID.Enemy_Middle, new Queue<GameObject>());
         poolDic.Add(PoolUniqueID.Enemy_Bottom, new Queue<GameObject>());
         poolDic.Add(PoolUniqueID.BasicBullet, new Queue<GameObject>());
+        poolDic.Add(PoolUniqueID.Damage, new Queue<GameObject>());
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject DamageClone = Instantiate(objectPoolData.GetPrefab(PoolUniqueID.Damage), Vector3.zero, Quaternion.identity);
+            DamageClone.transform.SetParent(spawnPoint[4]);
+            DamageClone.SetActive(false);
+        }
+
     }
 
     private void SpawnEnemy()
@@ -141,7 +151,7 @@ public class SpawnManager : MonoBehaviour
         if (poolDic[PoolUniqueID.BasicBullet].Count <= 0)
         {
             bulletClone = Instantiate(objectPoolData.GetPrefab(PoolUniqueID.BasicBullet), point.position, point.rotation);
-            bulletClone.transform.SetParent(spawnPoint[^1]);
+            bulletClone.transform.SetParent(spawnPoint[3]);
 
             if(bulletClone.TryGetComponent<Bullet>(out Bullet bullet))
             {
@@ -162,6 +172,26 @@ public class SpawnManager : MonoBehaviour
             bullet2.isSkillShot = skillshot;
         }
         bulletClone.SetActive(true);
+    }
+
+    public void PoolingDamage(int amount, Transform pos)
+    {
+        GameObject DamageClone;
+
+        if(poolDic[PoolUniqueID.Damage].Count <= 0)
+        {
+
+            DamageClone = Instantiate(objectPoolData.GetPrefab(PoolUniqueID.Damage), pos.position, Quaternion.identity);
+            DamageClone.transform.SetParent(spawnPoint[4]);
+            DamageClone.GetComponent<DamagePopup>().SetUp(amount);
+
+            return;
+        }
+
+        DamageClone = poolDic[PoolUniqueID.Damage].Dequeue();
+        DamageClone.transform.position = pos.position;
+        DamageClone.GetComponent<DamagePopup>().SetUp(amount);
+        DamageClone.SetActive(true);
     }
 
 }
